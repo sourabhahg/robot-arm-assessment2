@@ -48,7 +48,7 @@ The alternative was writing a plain Node.js test harness from scratch. That woul
 ### Clone the repository
 
 ```bash
-git clone https://github.com/<your-username>/robot-arm-refactored.git
+git clone https://github.com/sourabhahg/robot-arm-assessment2.git
 cd robot-arm-refactored
 ```
 
