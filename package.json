@@ -1,0 +1,15 @@
+{
+  "name": "robot-arm-tests",
+  "version": "2.0.0",
+  "description": "Robot Arm Work-Area Verification — Playwright test suite with clean OOP architecture",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:report": "npx playwright test --reporter=html"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0"
+  },
+  "dependencies": {
+    "dotenv": "^17.3.1"
+  }
+}

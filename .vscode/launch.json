@@ -1,0 +1,14 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node", // Or "node" in older versions
+      "request": "launch",
+      "name": "Launch Program",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/app.js" // Replace 'app.js' with your entry file
+    }
+  ]
+}
