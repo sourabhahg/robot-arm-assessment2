@@ -1,0 +1,54 @@
+════════════════════════════════════════════════════════════════════════════════════════════════════
+ Robot Arm Work-Area Verification — Test Results
+ Generated : 2026-03-09T06:21:49.216Z
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+Expected visited points       Actual visited points         Result      Remarks
+────────────────────────────────────────────────────────────────────────────────────────────────────
+(-3, -149)                    (-3, -149)                    PASS        
+(4, 150)                      (4, 150)                      PASS        
+                              (170, 150)                    FAIL        Outside work area — should have been skipped
+                              (0, 0)                        FAIL        Was never in the input file
+                              error                         FAIL        Malformed data
+                              (150, -155)                   FAIL        Outside work area — should have been skipped
+                              (-6, 160)                     FAIL        Outside work area — should have been skipped
+(-4, -150)                    (-4, -150)                    PASS        
+                              (4, 150)                      FAIL        Visited more times than expected
+                              (-4.23, -150.56)              FAIL        Outside work area — should have been skipped
+                              (160, -150)                   FAIL        Was never in the input file
+                              ()                            FAIL        Malformed data
+(0.045, 0.001)                NOT VISITED                   FAIL        Expected but never visited
+
+──────────────────────────────────────────────────────────────────────
+REQUIREMENT SUMMARY
+──────────────────────────────────────────────────────────────────────
+
+REQ-0: Rectangle in input file is valid
+Result: PASS
+  - Rectangle is valid.
+
+REQ-1: Arm visited all expected in-bounds points
+Result: FAIL
+  - Missing: (0.045, 0.001) was expected but never visited
+
+REQ-2: Arm only visited valid in-bounds points with no duplicates
+Result: FAIL
+  - Out of bounds: (170, 150) is outside the work area
+  - Out of bounds: (150, -155) is outside the work area
+  - Out of bounds: (-6, 160) is outside the work area
+  - Out of bounds: (-4.23, -150.56) is outside the work area
+  - Visited too many times: 4,150 was visited 2x but only appears 1x in input
+  - Visited too many times: 0,0 was visited 1x but only appears 0x in input
+  - Visited too many times: 160,-150 was visited 1x but only appears 0x in input
+  - Unexpected visit: (0, 0) was visited but was never in the input
+  - Unexpected visit: (160, -150) was visited but was never in the input
+
+REQ-3: Output file has valid coordinates on every line
+Result: FAIL
+  - Line 5: "error" is not a valid coordinate
+  - Line 12: "()" is not a valid coordinate
+
+──────────────────────────────────────────────────────────────────────
+OVERALL: FAIL
+════════════════════════════════════════════════════════════════════════════════════════════════════
